@@ -215,9 +215,9 @@ fn make_sound<T: Animal>(animal: &T) {
 }
 
 fn main() {
-    println!("=".repeat(60));
+    println!("{}", "=".repeat(60));
     println!("RUST OOP CONCEPTS DEMONSTRATION");
-    println!("=".repeat(60));
+    println!("{}", "=".repeat(60));
     
     // Create instances
     let mut dog = Dog::new("Rex", 5, "German Shepherd");
@@ -228,7 +228,7 @@ fn main() {
     
     // ---------------------------------------------------------------------
     println!("\n1. ENCAPSULATION DEMO:");
-    println!("-".repeat(40));
+    println!("{}", "-".repeat(40));
     
     println!("  Dog's age: {}", dog.get_age());
     dog.set_age(6);
@@ -239,7 +239,7 @@ fn main() {
     
     // ---------------------------------------------------------------------
     println!("\n2. ABSTRACTION DEMO (Traits define interface):");
-    println!("-".repeat(40));
+    println!("{}", "-".repeat(40));
     
     // All animals implement the same interface
     println!("  {} speaks: {}", dog.name(), dog.speak());
@@ -247,7 +247,7 @@ fn main() {
     
     // ---------------------------------------------------------------------
     println!("\n3. POLYMORPHISM DEMO (Same method, different behavior):");
-    println!("-".repeat(40));
+    println!("{}", "-".repeat(40));
     
     // Using trait objects (dynamic dispatch)
     let animals: Vec<&dyn Animal> = vec![&dog, &cat, &street_cat, &duck, &horse];
@@ -258,7 +258,7 @@ fn main() {
     
     // ---------------------------------------------------------------------
     println!("\n4. POLYMORPHISM - Generic functions:");
-    println!("-".repeat(40));
+    println!("{}", "-".repeat(40));
     
     make_sound(&dog);
     make_sound(&cat);
@@ -266,27 +266,28 @@ fn main() {
     
     // ---------------------------------------------------------------------
     println!("\n5. COMPOSITION ('Inheritance' Rust-style):");
-    println!("-".repeat(40));
+    println!("{}", "-".repeat(40));
     
     println!("  {}", horse.walk());      // Delegated to base
     println!("  {}", horse.gallop());    // Extended behavior
     
     // ---------------------------------------------------------------------
     println!("\n6. MULTIPLE TRAITS (Duck can Animal + Swimmer):");
-    println!("-".repeat(40));
+    println!("{}", "-".repeat(40));
     
     println!("  {}", duck.speak());
     println!("  {}", duck.swim());
     
     // ---------------------------------------------------------------------
     println!("\n7. DEFAULT TRAIT METHODS ('Inherited' behavior):");
-    println!("-".repeat(40));
+    println!("{}", "-".repeat(40));
     
     // describe() is defined once in trait, used by all
     println!("  {}", dog.describe());
     println!("  {}", horse.describe());
     
-    println!("\n{}", "=".repeat(60));
+    println!();
+    println!("{}", "=".repeat(60));
     println!("KEY TAKEAWAYS:");
     println!("{}", "=".repeat(60));
     println!("• ABSTRACTION:   Traits define behavior contracts");
